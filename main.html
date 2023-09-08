@@ -9,19 +9,11 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			let first = arr[0];
-	let second = arr[0];
-
-		for(let i = 0; i < arr.length; i++) {
-		  if(first < arr[i]){
-		    first = arr[i];
-		  }
-		  if(second < first && arr[i] < first) {
-		    second = arr[i];
-		  }
-		}
-			console.log(second)
+			const set=new Set(arr);
+			if(set.length===1||set.length===0)
+				return inf;
+			const arrSort=Array.from(set).sort((a,b)=>b-a);
+			return arrSort[1];
 		}
 
 		function Main() {
