@@ -10,8 +10,9 @@
 	<script>
 		function secondHighest(arr) {
 			const set=new Set(arr);
-			if(set.length===1||set.length===0)
-				return inf;
+			if(set.length===1||set.length===0 ){
+				return undefined;
+			}
 			const arrSort=Array.from(set).sort((a,b)=>b-a);
 			return arrSort[1];
 		}
