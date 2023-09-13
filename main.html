@@ -11,9 +11,18 @@
 		function secondHighest(arr) {
 			const set=new Set(arr);
 			if(set.length===1||set.length===0 ){
-				return undefined;
+				return -Infinity;
 			}
 			const arrSort=Array.from(set).sort((a,b)=>b-a);
+			let cnt = 0;
+			for (let i = 1; i < arr.length; i++) {
+				if(arr[i] == arr[i-1]){
+					cnt++;
+				}
+			}
+			if(cnt == arr.length){
+				return -Infinity;
+			}
 			return arrSort[1];
 		}
 
